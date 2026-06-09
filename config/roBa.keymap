@@ -10,6 +10,7 @@
 
 &trackball {
     // automouse-layer = <4>;
+
     scroll-layers = <5>;
 
     // arrows {
@@ -82,7 +83,7 @@
             bindings = <
 &kp Q           &kp W      &kp E          &kp R                        &kp T                                      &kp Y             &kp U  &lt 5 I    &kp O    &kp P
 &kp LCTRL       &kp A      &kp S          &kp D                        &kp F        &kp G          &lt 6 MINUS    &kp H             &kp J  &kp K      &kp L    &kp ENTER
-&kp LEFT_SHIFT  &kp Z      &kp X          &kp C                        &kp V        &kp B          &kt CAPS       &kp N             &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp LEFT_SHIFT  &kp Z      &kp X          &kp C                        &kp V        &kp B          &kt CAPS       &kp N             &kp M  &kp COMMA  &kp DOT  &lt 4 SLASH
 &kp LEFT_ALT    &kp LCTRL  &kp LEFT_META  &mt LEFT_COMMAND LANGUAGE_2  &lt 2 SPACE  &lt 3 TAB      &kp BACKSPACE  &lt 1 LANGUAGE_1                             &kp DEL
             >;
 
