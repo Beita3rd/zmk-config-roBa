@@ -60,7 +60,7 @@
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&to 2 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
     };
@@ -79,13 +79,15 @@
     keymap {
         compatible = "zmk,keymap";
 
-        MOUSE {
+        windows {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
+&kp Q           &kp W      &kp E          &kp R                        &kp T                                      &kp Y             &kp U  &lt 1 I    &lt 3 O  &kp P
+&kp LCTRL       &kp A      &kp S          &kp D                        &kp F        &kp G          &lt 7 MINUS    &kp H             &kp J  &kp K      &kp L    &kp ENTER
+&kp LEFT_SHIFT  &kp Z      &kp X          &kp C                        &kp V        &kp B          &kt CAPS       &kp N             &kp M  &kp COMMA  &kp DOT  &lt 3 SLASH
+&kp LEFT_ALT    &kp LCTRL  &kp LEFT_META  &mt LEFT_COMMAND LANGUAGE_2  &lt 5 SPACE  &lt 6 TAB      &kp BACKSPACE  &lt 4 LANGUAGE_1                             &kp DEL
             >;
+
+            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
         SCROLL {
@@ -97,26 +99,24 @@
             >;
         };
 
-        windows {
+        mac {
             bindings = <
-&kp Q           &kp W      &kp E          &kp R                        &kp T                                      &kp Y             &kp U  &lt 1 I    &lt 0 O  &kp P
+&kp Q           &kp W      &kp E          &kp R                        &kp T                                      &kp Y             &kp U  &lt 1 I    &lt 3 O  &kp P
 &kp LCTRL       &kp A      &kp S          &kp D                        &kp F        &kp G          &lt 7 MINUS    &kp H             &kp J  &kp K      &kp L    &kp ENTER
-&kp LEFT_SHIFT  &kp Z      &kp X          &kp C                        &kp V        &kp B          &kt CAPS       &kp N             &kp M  &kp COMMA  &kp DOT  &lt 0 SLASH
+&kp LEFT_SHIFT  &kp Z      &kp X          &kp C                        &kp V        &kp B          &kt CAPS       &kp N             &kp M  &kp COMMA  &kp DOT  &lt 3 SLASH
 &kp LEFT_ALT    &kp LCTRL  &kp LEFT_META  &mt LEFT_COMMAND LANGUAGE_2  &lt 5 SPACE  &lt 6 TAB      &kp BACKSPACE  &lt 4 LANGUAGE_1                             &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
-        mac {
+        MOUSE {
             bindings = <
-&kp Q           &kp W      &kp E          &kp R                        &kp T                                      &kp Y             &kp U  &lt 1 I    &lt 0 O  &kp P
-&kp LCTRL       &kp A      &kp S          &kp D                        &kp F        &kp G          &lt 7 MINUS    &kp H             &kp J  &kp K      &kp L    &kp ENTER
-&kp LEFT_SHIFT  &kp Z      &kp X          &kp C                        &kp V        &kp B          &kt CAPS       &kp N             &kp M  &kp COMMA  &kp DOT  &lt 0 SLASH
-&kp LEFT_ALT    &kp LCTRL  &kp LEFT_META  &mt LEFT_COMMAND LANGUAGE_2  &lt 5 SPACE  &lt 6 TAB      &kp BACKSPACE  &lt 4 LANGUAGE_1                             &kp DEL
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
         FUNCTION {
@@ -150,7 +150,7 @@
 
         layer_6 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                      &to 0   &to 2   &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
